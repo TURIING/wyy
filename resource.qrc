@@ -1,0 +1,75 @@
+<RCC>
+    <qresource prefix="/icon">
+        <file>Resources/icon.png</file>
+        <file>Resources/download.png</file>
+        <file>Resources/like.png</file>
+        <file>Resources/recently.png</file>
+        <file>Resources/close.png</file>
+        <file>Resources/maximum.png</file>
+        <file>Resources/minimum.png</file>
+        <file>Resources/mailbox.png</file>
+        <file>Resources/project_screen.png</file>
+        <file>Resources/setting.png</file>
+        <file>Resources/skin_change.png</file>
+        <file>Resources/vip_renew.png</file>
+    </qresource>
+    <qresource prefix="/images">
+        <file>Resources/images/1.png</file>
+        <file>Resources/images/2.png</file>
+        <file>Resources/images/3.png</file>
+        <file>Resources/images/4.png</file>
+        <file>Resources/images/5.png</file>
+        <file>Resources/images/6.png</file>
+        <file>Resources/images/7.png</file>
+        <file>Resources/images/8.png</file>
+        <file>Resources/images/9.png</file>
+        <file>Resources/images/10.png</file>
+        <file>Resources/images/turiing.png</file>
+    </qresource>
+    <qresource prefix="/gallery">
+        <file>Resources/images/gallery/1.png</file>
+        <file>Resources/images/gallery/2.png</file>
+        <file>Resources/images/gallery/3.png</file>
+        <file>Resources/images/gallery/4.png</file>
+        <file>Resources/images/gallery/5.png</file>
+        <file>Resources/images/gallery/6.png</file>
+        <file>Resources/images/gallery/7.png</file>
+        <file>Resources/images/gallery/8.png</file>
+        <file>Resources/images/gallery/9.png</file>
+        <file>Resources/images/gallery/10.png</file>
+    </qresource>
+    <qresource prefix="/message">
+        <file>Resources/images/message/1.png</file>
+        <file>Resources/images/message/2.png</file>
+        <file>Resources/images/message/3.png</file>
+        <file>Resources/images/message/4.png</file>
+        <file>Resources/images/message/5.png</file>
+        <file>Resources/images/message/6.png</file>
+    </qresource>
+    <qresource prefix="/rank">
+        <file>Resources/rank/surge.png</file>
+        <file>Resources/rank/hot.png</file>
+        <file>Resources/rank/new.png</file>
+        <file>Resources/rank/original.png</file>
+        <file>Resources/rank/1.png</file>
+        <file>Resources/rank/2.png</file>
+        <file>Resources/rank/3.png</file>
+        <file>Resources/rank/4.png</file>
+        <file>Resources/rank/5.png</file>
+        <file>Resources/rank/6.png</file>
+        <file>Resources/rank/7.png</file>
+        <file>Resources/rank/8.png</file>
+        <file>Resources/rank/9.png</file>
+        <file>Resources/rank/10.png</file>
+        <file>Resources/rank/11.png</file>
+        <file>Resources/rank/12.png</file>
+        <file>Resources/rank/13.png</file>
+        <file>Resources/rank/14.png</file>
+        <file>Resources/rank/15.png</file>
+        <file>Resources/rank/16.png</file>
+        <file>Resources/rank/17.png</file>
+        <file>Resources/rank/18.png</file>
+        <file>Resources/rank/19.png</file>
+        <file>Resources/rank/20.png</file>
+    </qresource>
+</RCC>

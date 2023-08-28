@@ -1,0 +1,118 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ui version="4.0">
+ <class>SlideShowWidget</class>
+ <widget class="QWidget" name="SlideShowWidget">
+  <property name="geometry">
+   <rect>
+    <x>0</x>
+    <y>0</y>
+    <width>1510</width>
+    <height>375</height>
+   </rect>
+  </property>
+  <property name="windowTitle">
+   <string>SlideShowWidget</string>
+  </property>
+  <widget class="QWidget" name="layoutWidget">
+   <property name="geometry">
+    <rect>
+     <x>-1</x>
+     <y>-1</y>
+     <width>1511</width>
+     <height>371</height>
+    </rect>
+   </property>
+   <layout class="QVBoxLayout" name="verticalLayout">
+    <item>
+     <widget class="SlideShowView" name="graphicsView">
+      <property name="alignment">
+       <set>Qt::AlignLeading|Qt::AlignLeft|Qt::AlignVCenter</set>
+      </property>
+     </widget>
+    </item>
+    <item>
+     <layout class="QHBoxLayout" name="horizontalLayout">
+      <property name="spacing">
+       <number>15</number>
+      </property>
+      <item>
+       <spacer name="horizontalSpacer_2">
+        <property name="orientation">
+         <enum>Qt::Horizontal</enum>
+        </property>
+        <property name="sizeHint" stdset="0">
+         <size>
+          <width>40</width>
+          <height>20</height>
+         </size>
+        </property>
+       </spacer>
+      </item>
+      <item>
+       <widget class="SlideShowButton" name="btnPic0" native="true">
+        <property name="enabled">
+         <bool>true</bool>
+        </property>
+       </widget>
+      </item>
+      <item>
+       <widget class="SlideShowButton" name="btnPic1" native="true"/>
+      </item>
+      <item>
+       <widget class="SlideShowButton" name="btnPic2" native="true"/>
+      </item>
+      <item>
+       <widget class="SlideShowButton" name="btnPic3" native="true"/>
+      </item>
+      <item>
+       <widget class="SlideShowButton" name="btnPic4" native="true"/>
+      </item>
+      <item>
+       <widget class="SlideShowButton" name="btnPic5" native="true"/>
+      </item>
+      <item>
+       <widget class="SlideShowButton" name="btnPic6" native="true"/>
+      </item>
+      <item>
+       <widget class="SlideShowButton" name="btnPic7" native="true"/>
+      </item>
+      <item>
+       <widget class="SlideShowButton" name="btnPic8" native="true"/>
+      </item>
+      <item>
+       <widget class="SlideShowButton" name="btnPic9" native="true"/>
+      </item>
+      <item>
+       <spacer name="horizontalSpacer">
+        <property name="orientation">
+         <enum>Qt::Horizontal</enum>
+        </property>
+        <property name="sizeHint" stdset="0">
+         <size>
+          <width>40</width>
+          <height>20</height>
+         </size>
+        </property>
+       </spacer>
+      </item>
+     </layout>
+    </item>
+   </layout>
+  </widget>
+ </widget>
+ <customwidgets>
+  <customwidget>
+   <class>SlideShowButton</class>
+   <extends>QWidget</extends>
+   <header>slideshowbutton.h</header>
+   <container>1</container>
+  </customwidget>
+  <customwidget>
+   <class>SlideShowView</class>
+   <extends>QGraphicsView</extends>
+   <header>slideshowview.h</header>
+  </customwidget>
+ </customwidgets>
+ <resources/>
+ <connections/>
+</ui>

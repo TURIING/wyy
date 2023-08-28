@@ -1,0 +1,15 @@
+QLabel {
+    background: transparent;
+}
+
+#label_song {
+    color: rgb(51, 51, 51);
+}
+
+#label_hot {
+    color:rgb(204,204,204);
+}
+
+#label_description {
+    color:rgb(153,153,153);
+}

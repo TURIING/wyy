@@ -1,0 +1,209 @@
+
+
+#widget_top {
+    background: rgb(236, 65, 65);
+}
+
+* {
+    /* 去除焦点虚线 */
+    outline: 0px;
+}
+#label_logo {
+    border-image: url(../Resources/logo.png);
+}
+
+#btn_back {
+    padding: 5px;
+    border-image: url(../Resources/back.png);
+    background-color: rgb(217,59,59);
+    border-radius:19px;
+}
+
+#btn_front {
+    padding: 5px;
+    border-image: url(../Resources/front.png);
+    background-color: rgb(217,59,59);
+    border-radius:19px;
+}
+
+#btn_close {
+    border-image: url(:/icon/Resources/close.png);
+}
+
+#btn_maximum {
+    border-image: url(:/icon/Resources/maximum.png);
+}
+
+#btn_minimum {
+    border-image: url(:/icon/Resources/minimum.png);
+}
+
+#btn_project_screen {
+    border-image: url(:/icon/Resources/project_screen.png);
+}
+
+#btn_mailBox {
+    border-image: url(:/icon/Resources/mailbox.png);
+}
+
+#btn_setting {
+    border-image: url(:/icon/Resources/setting.png);
+}
+
+#btn_skinChange {
+    border-image: url(:/icon/Resources/skin_change.png);
+}
+
+#btn_vipRenew {
+    border-image: url(:/icon/Resources/vip_renew.png);
+}
+
+/*********************************************** lineEdit_Search *******************************************/
+#lineEdit_Search {
+    background: rgb(225,62,62);
+    border-radius: 22px;
+    padding: 0px 30px 0px 50px;
+    font-size: 14;
+    color: white;
+}
+
+#label_searchIcon {
+    border-image: url(../Resources/search.png);
+}
+
+
+/*********************************************** widget_left ***********************************************/
+#widget_left {
+    background: white;
+}
+
+/************************************************ listWidget_LeftMenu *******************************************/
+QListWidget#listWidget_LeftMenu {
+    padding: 13px 15px 0px 15px;
+    border: 0px;
+    color: rgb(55, 55, 55);
+    background: rgb(255, 255, 255);
+}
+
+QListWidget::Item#listWidget_LeftMenu {
+    height: 55;
+    border: 0px solid rgb(255, 255, 255);
+    padding-top: 1px;
+    padding-left: 10px;
+    font-size: 18px;
+    margin-top: 3px;
+}
+
+QListWidget::Item:hover#listWidget_LeftMenu {
+    border: 1px solid rgb(246,246,247);
+    border-radius: 5px;
+    background:rgb(246,246,247);
+    font-size: 12px;
+}
+
+QListWidget::Item:selected#listWidget_LeftMenu {
+    font-size: 9px;
+    font-weight: bold;
+    color: rgb(55, 55, 55);
+    border: 1px solid rgb(246,246,247);
+    border-radius: 5px;
+    background: rgb(246, 246, 247);
+}
+
+/*********************************************** label_MyMusic ***********************************************/
+#label_MyMusic {
+    padding-left: 17px;
+    color: rgb(159, 159, 159);
+}
+
+/************************************************ listWidget_MyMusic *******************************************/
+
+QListWidget#listWidget_MyMusic {
+    padding-top: 5px;
+    padding-left: 15px;
+    padding-right: 15px;
+    border: 0px;
+    color: rgb(55, 55, 55);
+    background: rgb(255, 255, 255);
+}
+QListWidget::Item#listWidget_MyMusic {
+    height: 55;
+    border: 0px solid white;
+    padding-left: 7px;
+}
+
+QListWidget::Item:hover#listWidget_MyMusic {
+	background:rgb(246,246,247);
+	border: 1px solid rgb(246,246,247);
+    border-radius: 5px;
+}
+
+QListWidget::Item:selected#listWidget_MyMusic {
+	font-size:16px;
+	font-weight: bold;
+	color:rgb(55,55,55);
+	border: 1px solid rgb(246,246,247);
+    border-radius: 5px;
+	background:rgb(246,246,247);
+}
+
+/************************************************* frame_separator *****************************************/
+QFrame#frame_separator {
+    background: rgb(225, 215, 205);
+}
+
+/************************************************** stackedWidget *******************************************/
+#stackedWidget {
+    background: white;
+}
+
+/************************************************** tabWidget_findMusic ***********************************/
+
+QTabWidget::pane#tabWidget_findMusic {
+    border: none;
+    background: white;
+}
+
+QTabBar::tab {
+    background:white;
+    border-bottom: 0px;
+    padding-top: 25px;
+    min-width: 85px;
+    min-height:30px;
+    font-family:"微软雅黑";
+    font-size:22px;
+}
+
+QTabBar::tab:selected
+{
+	border-bottom: 3px solid rgb(236,65,65);
+	color: rgb(55,55,55);
+	font-size:27px;
+	font-weight: bold;
+}
+
+QWidget#GalleryItem {
+    background: grey;
+}
+
+/****************************************** 排行榜 ************************************************/
+
+QListWidget#listRankSurge {
+    border: 0px;
+    color: rgb(55, 55, 55);
+    background: white;
+}
+
+QListWidget::Item:hover#listRankSurge {
+    border-radius: 2px;
+    background: rgb(239, 239, 239);
+}
+
+QListWidget::Item:selected#listRankSurge {
+    border-radius: 2px;
+    background: rgb(239, 239, 239);
+}
+
+
+
+
