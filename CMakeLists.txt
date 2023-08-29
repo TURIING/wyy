@@ -14,7 +14,7 @@ find_package(Qt5 COMPONENTS
         Widgets
         REQUIRED)
 include_directories(${CMAKE_SOURCE_DIR})
-add_executable(wyy resource.qrc main.cpp utility/utility.h mainwindow.cpp mainwindow.h mainwindow.ui popupsearch.cpp popupsearch.h popupsearch.ui popupsearchitem.cpp popupsearchitem.h popupsearchitem.ui utility/utility.cpp slideshowwidget.cpp slideshowwidget.h slideshowwidget.ui slideshowbutton.cpp slideshowbutton.h slideshowview.cpp slideshowview.h slideshowitem.cpp slideshowitem.h galleryitem.h galleryitem.ui gallerywidget.cpp gallerywidget.h gallerywidget.ui messagewidget.cpp messagewidget.h messagewidget.ui messageitem.cpp messageitem.h messageitem.ui ranklistitem.cpp ranklistitem.h ranklistitem.ui ranklistwidget.cpp ranklistwidget.h ranklistwidget.ui)
+add_executable(wyy resource.qrc main.cpp utility/utility.h mainwindow.cpp mainwindow.h mainwindow.ui popupsearch.cpp popupsearch.h popupsearch.ui popupsearchitem.cpp popupsearchitem.h popupsearchitem.ui utility/utility.cpp slideshowwidget.cpp slideshowwidget.h slideshowwidget.ui slideshowbutton.cpp slideshowbutton.h slideshowview.cpp slideshowview.h slideshowitem.cpp slideshowitem.h galleryitem.h galleryitem.ui gallerywidget.cpp gallerywidget.h gallerywidget.ui messagewidget.cpp messagewidget.h messagewidget.ui messageitem.cpp messageitem.h messageitem.ui ranklistitem.cpp ranklistitem.h ranklistitem.ui ranklistwidget.cpp ranklistwidget.h ranklistwidget.ui podcastwidgetitem.cpp podcastwidgetitem.h podcastwidgetitem.ui podcastwidget.cpp podcastwidget.h podcastwidget.ui)
 target_link_libraries(wyy
         Qt5::Core
         Qt5::Gui

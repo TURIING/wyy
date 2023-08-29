@@ -90,7 +90,6 @@ QListWidget::Item#listWidget_LeftMenu {
     border: 0px solid rgb(255, 255, 255);
     padding-top: 1px;
     padding-left: 10px;
-    font-size: 18px;
     margin-top: 3px;
 }
 
@@ -98,7 +97,7 @@ QListWidget::Item:hover#listWidget_LeftMenu {
     border: 1px solid rgb(246,246,247);
     border-radius: 5px;
     background:rgb(246,246,247);
-    font-size: 12px;
+
 }
 
 QListWidget::Item:selected#listWidget_LeftMenu {

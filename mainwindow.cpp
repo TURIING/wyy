@@ -35,10 +35,12 @@ MainWindow::MainWindow(QWidget *parent): QMainWindow(parent), ui(new Ui::MainWin
 
     initRank();
 
+    initPopupSearch();
 }
 
 MainWindow::~MainWindow() {
     delete ui;
+    delete m_popupSearchWidget;
 }
 
 /**
@@ -76,6 +78,15 @@ void MainWindow::mousePressEvent(QMouseEvent *_event) {
         if(!rect.contains(_event->pos())) m_messageWidget->hide();
     }
 
+    /* 鼠标焦点不在时，则关闭PopupSearch */
+    if(m_popupSearchWidget && !m_popupSearchWidget->isHidden()) {
+        auto rect = m_popupSearchWidget->geometry();
+        if(!rect.contains(_event->pos())) {
+            m_popupSearchWidget->hide();
+            ui->lineEdit_Search->clearFocus();
+        }
+    }
+
     QWidget::mousePressEvent(_event);
 }
 
@@ -92,10 +103,11 @@ void MainWindow::mouseMoveEvent(QMouseEvent *_event) {
 }
 
 /*
- * 初始化轮播图
+ * 初始化个性推荐页面
  */
 void MainWindow::initPersonalRecommand() {
-    auto galleryWidget = new GalleryWidget;
+    /* 推荐歌单 item */
+    auto galleryWidget = new GalleryWidget(this);
     galleryWidget->setGalleryItem({{":/gallery/Resources/images/gallery/1.png", "每日歌曲推荐", 143},
                                    {":/gallery/Resources/images/gallery/2.png", "今天从《像你》开始听起|私人雷达", 143},
                                    {":/gallery/Resources/images/gallery/3.png", "萝莉女王Reol精选歌单", 143},
@@ -107,16 +119,36 @@ void MainWindow::initPersonalRecommand() {
                                    {":/gallery/Resources/images/gallery/9.png", "[日漫二次元]那些无法跳过的op ed", 143},
                                    {":/gallery/Resources/images/gallery/10.png", "【绘画/肝图食用】适合画画时听的BGM", 143}});
 
+    /* 推荐歌单 label */
     auto label_1 = new QLabel("推荐歌单 >");
     label_1->setCursor(Qt::PointingHandCursor);
     label_1->setFixedWidth(150);
-    label_1->setStyleSheet("QLabel { color: rgb(51, 51, 51); font-family: '微软雅黑'; font-size: 28px; font-weight: bold; margin-bottom: 8px; margin-top: 15px;}");
+    label_1->setStyleSheet("QLabel { color: rgb(51, 51, 51); font-family: '微软雅黑'; font-size: 28px; font-weight: bold; margin-bottom: 12px; margin-top: 15px; margin-left: 0px;}");
+
+    /* 热门博客 label */
+    auto label_2 = new QLabel("热门博客 >");
+    label_2->setCursor(Qt::PointingHandCursor);
+    label_2->setFixedWidth(150);
+    label_2->setStyleSheet("QLabel { color: rgb(51, 51, 51); font-family: '微软雅黑'; font-size: 28px; font-weight: bold; margin-bottom: 8px; margin-top: 30px; }");
+
+    /* 热门播客 item */
+    auto podcastWidget = new PodcastWidget(this);
+    podcastWidget->appendItem({{":/podcast/Resources/images/podcast/1.png", "爱的回归线(0.8x)", "歌曲翻唱", "慢速降调0.7x/0.8x", "979万", "05:20"},
+                               {":/podcast/Resources/images/podcast/2.png", "你离开了我的夏大（音乐会live版）", "歌曲翻唱", "种地吧十个勤天", "40440", "04:53"},
+                               {":/podcast/Resources/images/podcast/3.png", "等不到的等待-檀健次", "影视原声", "电视剧 长相思 配乐..", "76万", "04:19"},
+                               {":/podcast/Resources/images/podcast/4.png", "钢琴曲独奏《漂洋过海来看你》纯音乐", "乐器演奏", "怀旧钢琴曲", "98539", "02:50"},
+                               {":/podcast/Resources/images/podcast/5.png", "兰亭序 (降调)", "动漫", "不问ciaga", "155万", "05:38"},
+                               {":/podcast/Resources/images/podcast/6.png", "EA7硬曲日 (抖音热歌）", "3D环绕", "『EA7硬曲』2023..", "47702", "02:22"}});
+
 
     auto layout = new QVBoxLayout();
     layout->setSpacing(0);
     layout->addWidget(new SlideShowWidget());
     layout->addWidget(label_1);
     layout->addWidget(galleryWidget);
+    layout->addWidget(label_2);
+    layout->insertSpacing(3, 20);
+    layout->addWidget(podcastWidget);
 
     auto widget = new QWidget();
     widget->setLayout(layout);
@@ -124,6 +156,8 @@ void MainWindow::initPersonalRecommand() {
     ui->scrollArea_recommend->setWidget(widget);
     ui->scrollArea_recommend->setAlignment(Qt::AlignCenter);
     ui->scrollArea_recommend->setWidgetResizable(false);
+
+    /* 设置滚动条样式 */
     auto scrollBar = ui->scrollArea_recommend->verticalScrollBar();
     scrollBar->setStyleSheet("QScrollBar::vertical{ background: transparent; width: 10px; }"
                              "QScrollBar::handle:vertical{ min-height: 10px; max-height: 20px; background: rgb(224, 224, 224); width: 10px; border-radius: 5px; }"
@@ -160,6 +194,14 @@ void MainWindow::on_btn_maximum_clicked() {
 void MainWindow::on_btn_mailBox_clicked() {
     if(!m_messageWidget) {
         m_messageWidget = new MessageWidget(this);
+
+        /* 阴影 */
+        auto shadowEffect = new QGraphicsDropShadowEffect(this);
+        shadowEffect->setOffset(0, 1);
+        shadowEffect->setColor(Qt::gray);
+        shadowEffect->setBlurRadius(10);
+        m_messageWidget->setGraphicsEffect(shadowEffect);
+
         m_messageWidget->setMouseTracking(true);
         auto mousePos = ui->btn_mailBox->pos();
         m_messageWidget->setGeometry(mousePos.x() - 233, mousePos.y() + 60, m_messageWidget->width(), m_messageWidget->height());
@@ -266,6 +308,57 @@ void MainWindow::initRank() {
     widget->setLayout(vLayout);
 
     ui->scrollArea_rank->setWidget(widget);
+}
+
+bool MainWindow::eventFilter(QObject *_watched, QEvent *_event) {
+    if(_watched == ui->lineEdit_Search) {
+        if(_event->type() == QEvent::MouseButtonPress) {
+            auto event = static_cast<QMouseEvent *>(_event);
+            if(event->button() == Qt::LeftButton) {
+                m_popupSearchWidget->show();
+                return true;
+            }
+        }
+    }
+    return QObject::eventFilter(_watched, _event);
+}
+
+/*
+ * 初始化搜索弹出框
+ */
+void MainWindow::initPopupSearch() {
+    if(!m_popupSearchWidget) m_popupSearchWidget = new PopupSearch(this);
+
+    /* 阴影 */
+    auto shadowEffect = new QGraphicsDropShadowEffect(this);
+    shadowEffect->setOffset(0, 1);
+    shadowEffect->setColor(Qt::gray);
+    shadowEffect->setBlurRadius(10);
+    m_popupSearchWidget->setGraphicsEffect(shadowEffect);
+
+    auto pos = ui->lineEdit_Search->pos();
+    m_popupSearchWidget->append({{1, "百氚朝海", 27234, ""},
+                                 {2, "悬溺", 23125, "这个名字读快了就是喜欢你"},
+                                 {3, "理解万岁", 17917, "廖俊涛新歌发行"},
+                                 {4, "林俊杰", 16468, "看看行走的CD机又发什么新歌啦"},
+                                 {5, "薛之谦", 11859, "老薛一发歌就能掀起狂潮！"},
+                                 {6, "武家坡", 10750, ""},
+                                 {7, "精卫", 9843, ""},
+                                 {8, "坏女孩", 9529, "至我们终将逝去的青春"},
+                                 {9, "声音玩具", 9365, "没有人能够比我们更接近对方"},
+                                 {10, "张杰", 9089, "与张杰一起，从现在到未来，一直温暖无限！"},
+                                 {11, "郑润泽", 5528, ""},
+                                 {12, "汪苏泷", 5126, "才华横溢的唱作歌手！"},
+                                 {13, "凄美地", 4600, "Tia翻唱郭顶，超有律动～"},
+                                 {14, "徐良", 4430, "95后最爱听的原创音乐人之一！"},
+                                 {15, "五月天", 4225, "深情最是阿信词怪兽曲"},
+                                 {16, "凤凰传奇", 4134, "曾毅的和声起来真是掉一地鸡皮疙瘩。"},
+                                 {17, "向云端", 4031, ""},
+                                 {18, "陈奕迅", 3908, "年少不听陈奕迅，听懂已不再年少"},
+                                 {19, "天若有情", 3853, "当年的电影《天若有情》，现在听着歌都会泪目啊~"}});
+    m_popupSearchWidget->setGeometry(pos.x() - 100, pos.y() + 80, ui->lineEdit_Search->width(), ui->lineEdit_Search->height());
+
+    m_popupSearchWidget->hide();
 }
 
 

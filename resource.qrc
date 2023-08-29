@@ -72,4 +72,14 @@
         <file>Resources/rank/19.png</file>
         <file>Resources/rank/20.png</file>
     </qresource>
+    <qresource prefix="/podcast">
+        <file>Resources/images/podcast/1.png</file>
+        <file>Resources/images/podcast/2.png</file>
+        <file>Resources/images/podcast/3.png</file>
+        <file>Resources/images/podcast/4.png</file>
+        <file>Resources/images/podcast/5.png</file>
+        <file>Resources/images/podcast/6.png</file>
+        <file>Resources/images/podcast/views.png</file>
+        <file>Resources/images/podcast/duration.png</file>
+    </qresource>
 </RCC>

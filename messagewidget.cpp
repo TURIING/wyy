@@ -11,7 +11,7 @@
 MessageWidget::MessageWidget(QWidget *parent) :QWidget(parent), ui(new Ui::MessageWidget) {
     ui->setupUi(this);
     this->setAttribute(Qt::WA_StyledBackground);
-    this->setStyleSheet("QWidget#MessageWidget{border:0px; background:white; border-radius:1px;}"
+    this->setStyleSheet("QWidget#MessageWidget{border:0px; background:white; border-bottom-left-radius:5px;}"
                         "QLabel#label_read{ color:rgb(80,125,175); }");
     initBtnGroup();
     initMessageList();
@@ -105,5 +105,4 @@ void MessageWidget::initMessageList() {
                              "QScrollBar::up-arrow:vertical{ border: none; }"
                              "QScrollBar::sub-line:vertical{ background: transparent; }"
                              "QScrollBar::add-line:vertical{ background: transparent; }");
-
 }

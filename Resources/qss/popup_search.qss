@@ -1,5 +1,23 @@
 QWidget{
     border: 1px;
     background: white;
-    border-radius: 5px;
+    border-radius: 10px;
+}
+
+QListWidget::item {
+    height: 77px;
+}
+
+QListWidget::item:hover {
+    background: rgb(242, 242, 242);
+}
+
+QListWidget::item:selected {
+    background: rgb(242, 242, 242);
+}
+
+QLabel#label {
+    color: rgb(102, 102, 102);
+    font-size: 24px;
+    font-family: "微软雅黑";
 }

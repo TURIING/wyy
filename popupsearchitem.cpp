@@ -23,10 +23,12 @@ PopupSearchItem::~PopupSearchItem() {
  * @param _bo
  */
 void PopupSearchItem::setIdColorHighlight(bool _bo) {
-    if(_bo)
-        ui->label_id->setStyleSheet("QLabel{ color:rgb(255,61,61); }");
+    if(_bo) {
+        ui->label_id->setStyleSheet("QLabel{ color:rgb(255, 58, 58); font-size: 24px; }");
+        ui->label_song->setStyleSheet("QLabel#label_song { font-weight: bold; color: rgb(51, 51, 51); font-family: '微软雅黑'; font-size: 18px; }");
+    }
     else
-        ui->label_id->setStyleSheet("QLabel{ color:rgb(222,222,222); }");
+        ui->label_id->setStyleSheet("QLabel{ color:rgb(194, 194, 194); font-size: 24px; }");
 }
 
 /**
@@ -58,5 +60,9 @@ void PopupSearchItem::setHot(int _num) {
  * @param _text
  */
 void PopupSearchItem::setDescription(const QString &_text) {
+    if(_text.isEmpty()) {
+        ui->label_description->hide();
+        return;
+    }
     ui->label_description->setText(_text);
 }

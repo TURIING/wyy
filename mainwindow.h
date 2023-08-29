@@ -13,6 +13,10 @@
 #include "messagewidget.h"
 #include "utility/utility.h"
 #include "ranklistwidget.h"
+#include <QEvent>
+#include <QMouseEvent>
+#include <QGraphicsDropShadowEffect>
+#include "podcastwidget.h"
 
 QT_BEGIN_NAMESPACE
 namespace Ui { class MainWindow; }
@@ -31,15 +35,18 @@ public:
 protected:
     void mousePressEvent(QMouseEvent *_event);
     void mouseMoveEvent(QMouseEvent *_event);
+    bool eventFilter(QObject *_watched, QEvent *_event) override;
+
 private:
     Ui::MainWindow *ui;
     QPoint m_mouseGlobalPos;
     MessageWidget *m_messageWidget = nullptr;
-
+    PopupSearch *m_popupSearchWidget = nullptr;
 
     void initListWidgetLeftMenu();
     void initListWidgetMyMusic();
     void initPersonalRecommand();
+    void initPopupSearch();
     void initRank();
 private slots:
     void on_btn_close_clicked();

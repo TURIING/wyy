@@ -9,6 +9,7 @@
 #include <QListWidget>
 #include <initializer_list>
 #include "popupsearchitem.h"
+#include <QScrollBar>
 
 QT_BEGIN_NAMESPACE
 namespace Ui { class PopupSearch; }
@@ -17,7 +18,7 @@ QT_END_NAMESPACE
 class PopupSearch : public QWidget {
     Q_OBJECT
 public:
-    struct ItemContent {
+    struct SearchItemContent {
         int id;
         QString song;
         int hot;
@@ -28,8 +29,8 @@ public:
 
     ~PopupSearch() override;
 
-    void append(std::initializer_list<ItemContent> _list);
-    void append(ItemContent _item);
+    void append(std::initializer_list<SearchItemContent> _list);
+    void append(SearchItemContent _item);
 private:
     Ui::PopupSearch *ui;
 

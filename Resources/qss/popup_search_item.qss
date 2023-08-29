@@ -4,12 +4,16 @@ QLabel {
 
 #label_song {
     color: rgb(51, 51, 51);
+    font-family: '微软雅黑';
+    font-size: 18px;
 }
 
 #label_hot {
-    color:rgb(204,204,204);
+    color:rgb(213, 213, 213);
 }
 
 #label_description {
     color:rgb(153,153,153);
+    font-family: '微软雅黑';
+    font-size: 17px;
 }
