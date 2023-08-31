@@ -386,6 +386,9 @@
         <bold>false</bold>
        </font>
       </property>
+      <property name="cursor">
+       <cursorShape>ArrowCursor</cursorShape>
+      </property>
       <property name="tabPosition">
        <enum>QTabWidget::North</enum>
       </property>
@@ -477,6 +480,29 @@
        <attribute name="title">
         <string>歌手</string>
        </attribute>
+       <widget class="QScrollArea" name="scrollArea_singer">
+        <property name="geometry">
+         <rect>
+          <x>0</x>
+          <y>0</y>
+          <width>1545</width>
+          <height>941</height>
+         </rect>
+        </property>
+        <property name="widgetResizable">
+         <bool>true</bool>
+        </property>
+        <widget class="QWidget" name="scrollAreaWidgetContents_3">
+         <property name="geometry">
+          <rect>
+           <x>0</x>
+           <y>0</y>
+           <width>1543</width>
+           <height>939</height>
+          </rect>
+         </property>
+        </widget>
+       </widget>
       </widget>
       <widget class="QWidget" name="tab_6">
        <attribute name="title">

@@ -21,6 +21,12 @@ QString loadStyle(const QString &_filePath) {
     return text;
 }
 
+/**
+ * 获得圆角的图片
+ * @param _srcPixMap 图片
+ * @param _radius 圆角值
+ * @return
+ */
 QPixmap getRoundRectPixmap(QPixmap &_srcPixMap, int _radius) {
     //不处理空数据或者错误数据
     if (_srcPixMap.isNull()) {
@@ -48,4 +54,18 @@ QPixmap getRoundRectPixmap(QPixmap &_srcPixMap, int _radius) {
     painter.setClipPath(path);
     painter.drawPixmap(0, 0, imageWidth, imageHeight, newPixMap);
     return destImage;
+}
+
+/**
+ * 计算字符串所需的尺寸
+ * @param _font 字体
+ * @param _text 字符串
+ * @return
+ */
+QSize computeTextSize(const QFont &_font, const QString &_text) {
+    QFontMetrics fontMetrics(_font);
+    auto width = fontMetrics.horizontalAdvance(_text);
+    auto height = fontMetrics.height();
+
+    return QSize(width, height);
 }

@@ -17,6 +17,7 @@
 #include <QMouseEvent>
 #include <QGraphicsDropShadowEffect>
 #include "podcastwidget.h"
+#include "categoryselectbox.h"
 
 QT_BEGIN_NAMESPACE
 namespace Ui { class MainWindow; }
@@ -48,6 +49,7 @@ private:
     void initPersonalRecommand();
     void initPopupSearch();
     void initRank();
+    void initSinger();
 private slots:
     void on_btn_close_clicked();
     void on_btn_maximum_clicked();

@@ -14,5 +14,5 @@
 
 extern QString loadStyle(const QString &_filePath);
 extern QPixmap getRoundRectPixmap(QPixmap &_srcPixMap, int _radius);
-
+extern QSize computeTextSize(const QFont &_font, const QString &_text);
 #endif //WYY_UTILITY_H

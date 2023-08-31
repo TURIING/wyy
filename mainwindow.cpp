@@ -36,6 +36,8 @@ MainWindow::MainWindow(QWidget *parent): QMainWindow(parent), ui(new Ui::MainWin
     initRank();
 
     initPopupSearch();
+
+    initSinger();
 }
 
 MainWindow::~MainWindow() {
@@ -359,6 +361,89 @@ void MainWindow::initPopupSearch() {
     m_popupSearchWidget->setGeometry(pos.x() - 100, pos.y() + 80, ui->lineEdit_Search->width(), ui->lineEdit_Search->height());
 
     m_popupSearchWidget->hide();
+}
+
+/*
+ * 初始化歌手页面
+ */
+void MainWindow::initSinger() {
+    ui->scrollArea_singer->setStyleSheet("QScrollArea {background-color:transparent; border: none;}");
+    ui->scrollArea_singer->viewport()->setStyleSheet("background-color:transparent;");
+
+    auto languageBox = new CategorySelectBox();
+    languageBox->setColumnCount(6);
+    languageBox->setCategory("语种：");
+    languageBox->appendItem("全部");
+    languageBox->appendItem("华语");
+    languageBox->appendItem("欧美");
+    languageBox->appendItem("日本");
+    languageBox->appendItem("韩国");
+    languageBox->appendItem("其他");
+    languageBox->setDefaultItem(0);
+    connect(languageBox, &CategorySelectBox::itemChoosed, [](int _id) {
+        qDebug() << "language: " << _id;
+    });
+
+    auto categoryBox = new CategorySelectBox();
+    categoryBox->setColumnCount(4);
+    categoryBox->setCategory("分类：");
+    categoryBox->appendItem("全部");
+    categoryBox->appendItem("男歌手");
+    categoryBox->appendItem("女歌手");
+    categoryBox->appendItem("乐队组合");
+    categoryBox->setDefaultItem(0);
+    connect(categoryBox, &CategorySelectBox::itemChoosed, [](int _id) {
+        qDebug() << "category: " << _id;
+    });
+
+    auto selectBox = new CategorySelectBox();
+    selectBox->setColumnCount(15);
+    selectBox->setCategory("筛选：");
+    selectBox->appendItem("热门");
+    selectBox->appendItem("A");
+    selectBox->appendItem("B");
+    selectBox->appendItem("C");
+    selectBox->appendItem("D");
+    selectBox->appendItem("E");
+    selectBox->appendItem("F");
+    selectBox->appendItem("G");
+    selectBox->appendItem("H");
+    selectBox->appendItem("I");
+    selectBox->appendItem("J");
+    selectBox->appendItem("K");
+    selectBox->appendItem("L");
+    selectBox->appendItem("M");
+    selectBox->appendItem("N");
+    selectBox->appendItem("O");
+    selectBox->appendItem("P");
+    selectBox->appendItem("Q");
+    selectBox->appendItem("R");
+    selectBox->appendItem("S");
+    selectBox->appendItem("T");
+    selectBox->appendItem("U");
+    selectBox->appendItem("V");
+    selectBox->appendItem("W");
+    selectBox->appendItem("X");
+    selectBox->appendItem("Y");
+    selectBox->appendItem("Z");
+    selectBox->appendItem("#");
+    selectBox->setDefaultItem(0);
+    connect(selectBox, &CategorySelectBox::itemChoosed, [](int _id) {
+        qDebug() << "select: " << _id;
+    });
+
+    auto vLayout = new QVBoxLayout();
+    vLayout->setAlignment(Qt::AlignTop | Qt::AlignLeft);
+    vLayout->setContentsMargins(25, 35, 0, 0);
+    vLayout->setSpacing(15);
+    vLayout->addWidget(languageBox);
+    vLayout->addWidget(categoryBox);
+    vLayout->addWidget(selectBox);
+
+    auto widget = new QWidget(this);
+    widget->setLayout(vLayout);
+
+    ui->scrollArea_singer->setWidget(widget);
 }
 
 
