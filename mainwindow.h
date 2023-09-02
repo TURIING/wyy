@@ -18,6 +18,8 @@
 #include <QGraphicsDropShadowEffect>
 #include "podcastwidget.h"
 #include "categoryselectbox.h"
+#include "pageswitcher.h"
+#include "accountwidget.h"
 
 QT_BEGIN_NAMESPACE
 namespace Ui { class MainWindow; }
@@ -43,6 +45,7 @@ private:
     QPoint m_mouseGlobalPos;
     MessageWidget *m_messageWidget = nullptr;
     PopupSearch *m_popupSearchWidget = nullptr;
+    AccountWidget *m_accountWidget = nullptr;
 
     void initListWidgetLeftMenu();
     void initListWidgetMyMusic();
@@ -50,11 +53,14 @@ private:
     void initPopupSearch();
     void initRank();
     void initSinger();
+    void initNewestMusic();
 private slots:
     void on_btn_close_clicked();
     void on_btn_maximum_clicked();
     void on_btn_minimum_clicked();
     void on_btn_mailBox_clicked();
+    void on_btn_account_clicked();
+    void on_btn_setting_clicked();
 };
 
 

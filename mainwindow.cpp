@@ -33,11 +33,14 @@ MainWindow::MainWindow(QWidget *parent): QMainWindow(parent), ui(new Ui::MainWin
     /* btn_avator */
     this->setAvator(":/images/Resources/images/turiing.png");
 
+
     initRank();
 
     initPopupSearch();
 
     initSinger();
+
+    initNewestMusic();
 }
 
 MainWindow::~MainWindow() {
@@ -52,6 +55,12 @@ void MainWindow::initListWidgetLeftMenu() {
     ui->listWidget_LeftMenu->setVerticalScrollBarPolicy(Qt::ScrollBarAlwaysOff);        // 取消垂直滚动条
     ui->listWidget_LeftMenu->setHorizontalScrollBarPolicy(Qt::ScrollBarAlwaysOff);      // 取消水平滚动条
     ui->listWidget_LeftMenu->setCurrentRow(0);
+
+
+    connect(ui->listWidget_LeftMenu, &QListWidget::currentRowChanged, [this](int _index){
+        // 点击了 发现音乐
+        if(_index == 0) ui->stackedWidget->setCurrentIndex(0);
+    });
 }
 
 /**
@@ -74,19 +83,25 @@ void MainWindow::mousePressEvent(QMouseEvent *_event) {
     if(_event->y() < topWidgetHeight)
         m_mouseGlobalPos = _event->globalPos();
 
-    /* 鼠标焦点不在时，则关闭MessageWidget */
+    /* 鼠标焦点不在时，则关闭 MessageWidget */
     if(m_messageWidget && !m_messageWidget->isHidden()) {
         auto rect = m_messageWidget->geometry();
         if(!rect.contains(_event->pos())) m_messageWidget->hide();
     }
 
-    /* 鼠标焦点不在时，则关闭PopupSearch */
+    /* 鼠标焦点不在时，则关闭 PopupSearch */
     if(m_popupSearchWidget && !m_popupSearchWidget->isHidden()) {
         auto rect = m_popupSearchWidget->geometry();
         if(!rect.contains(_event->pos())) {
             m_popupSearchWidget->hide();
             ui->lineEdit_Search->clearFocus();
         }
+    }
+
+    /* 鼠标焦点不在时，则关闭 AccountWidget */
+    if(m_accountWidget && !m_accountWidget->isHidden()) {
+        auto rect = m_accountWidget->geometry();
+        if(!rect.contains(_event->pos())) m_accountWidget->hide();
     }
 
     QWidget::mousePressEvent(_event);
@@ -178,7 +193,8 @@ void MainWindow::setAvator(const QString &_imgPath) {
     //
     //QPixmap pixmap = QPixmap::fromImage(image);
     //ui->btn_avator->setIcon(QIcon(pixmap));
-    ui->btn_avator->setStyleSheet(QString("QPushButton{border-image: url(%1); border-radius: 25px; }").arg(_imgPath));
+    ui->btn_avator->setStyleSheet(QString("QPushButton#btn_avator{border-image: url(%1); border-radius: 25px; }").arg(_imgPath));
+    ui->btn_account->setStyleSheet(QString("QPushButton#btn_account{border-image: url(%1); }").arg(":/images/Resources/images/account.png"));
 }
 
 void MainWindow::on_btn_close_clicked() {
@@ -444,6 +460,48 @@ void MainWindow::initSinger() {
     widget->setLayout(vLayout);
 
     ui->scrollArea_singer->setWidget(widget);
+}
+
+/*
+ * 初始化最新音乐页面
+ */
+void MainWindow::initNewestMusic() {
+    auto widget = new QWidget(this);
+
+    auto pageSwitcher = new PageSwitcher(widget);
+    pageSwitcher->setFixedSize(50, 100);
+
+    auto vLayout = new QVBoxLayout(widget);
+    vLayout->addWidget(pageSwitcher, 0, Qt::AlignHCenter | Qt::AlignTop);
+
+    widget->setLayout(vLayout);
+
+    ui->scrollArea_newestMusic->setWidget(widget);
+}
+
+void MainWindow::on_btn_account_clicked() {
+    if(!m_accountWidget) {
+        m_accountWidget = new AccountWidget(this);
+
+        /* 阴影 */
+        auto shadowEffect = new QGraphicsDropShadowEffect(this);
+        shadowEffect->setOffset(0, 1);
+        shadowEffect->setColor(Qt::gray);
+        shadowEffect->setBlurRadius(10);
+        m_accountWidget->setGraphicsEffect(shadowEffect);
+
+        m_accountWidget->setMouseTracking(true);
+        auto mousePos = ui->btn_account->pos();
+        m_accountWidget->setGeometry(mousePos.x() - 233, mousePos.y() + 58, m_accountWidget->width(), m_accountWidget->height());
+    }
+
+    if(m_accountWidget->isHidden()) m_accountWidget->show();
+    else m_accountWidget->hide();
+}
+
+void MainWindow::on_btn_setting_clicked() {
+    ui->stackedWidget->setCurrentIndex(1);
+    ui->listWidget_LeftMenu->setCurrentRow(-1);
 }
 
 

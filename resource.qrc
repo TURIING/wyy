@@ -12,6 +12,7 @@
         <file>Resources/setting.png</file>
         <file>Resources/skin_change.png</file>
         <file>Resources/vip_renew.png</file>
+        <file>Resources/signIn.png</file>
     </qresource>
     <qresource prefix="/images">
         <file>Resources/images/1.png</file>
@@ -25,6 +26,7 @@
         <file>Resources/images/9.png</file>
         <file>Resources/images/10.png</file>
         <file>Resources/images/turiing.png</file>
+        <file>Resources/images/account.png</file>
     </qresource>
     <qresource prefix="/gallery">
         <file>Resources/images/gallery/1.png</file>
@@ -81,5 +83,22 @@
         <file>Resources/images/podcast/6.png</file>
         <file>Resources/images/podcast/views.png</file>
         <file>Resources/images/podcast/duration.png</file>
+    </qresource>
+    <qresource prefix="/account">
+        <file>Resources/account/1.png</file>
+        <file>Resources/account/2.png</file>
+        <file>Resources/account/3.png</file>
+        <file>Resources/account/4.png</file>
+        <file>Resources/account/5.png</file>
+        <file>Resources/account/6.png</file>
+        <file>Resources/account/7.png</file>
+        <file>Resources/account/8.png</file>
+        <file>Resources/account/9.png</file>
+        <file>Resources/account/10.png</file>
+        <file>Resources/account/right.png</file>
+    </qresource>
+    <qresource prefix="/setting">
+        <file>Resources/setting/checkbox_checked.png</file>
+        <file>Resources/setting/checkbox_unchecked.png</file>
     </qresource>
 </RCC>
