@@ -41,6 +41,8 @@ MainWindow::MainWindow(QWidget *parent): QMainWindow(parent), ui(new Ui::MainWin
     initSinger();
 
     initNewestMusic();
+
+    initSetttingWidget();
 }
 
 MainWindow::~MainWindow() {
@@ -61,6 +63,9 @@ void MainWindow::initListWidgetLeftMenu() {
         // 点击了 发现音乐
         if(_index == 0) ui->stackedWidget->setCurrentIndex(0);
     });
+
+    ui->stackedWidget->setCurrentIndex(0);
+    ui->tabWidget_findMusic->setCurrentIndex(0);
 }
 
 /**
@@ -502,6 +507,14 @@ void MainWindow::on_btn_account_clicked() {
 void MainWindow::on_btn_setting_clicked() {
     ui->stackedWidget->setCurrentIndex(1);
     ui->listWidget_LeftMenu->setCurrentRow(-1);
+}
+
+/*
+ * 初始化设置页面
+ */
+void MainWindow::initSetttingWidget() {
+    auto widget = new SettingWidget();
+    ui->stackedWidget->insertWidget(1, widget);
 }
 
 

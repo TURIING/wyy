@@ -100,5 +100,9 @@
     <qresource prefix="/setting">
         <file>Resources/setting/checkbox_checked.png</file>
         <file>Resources/setting/checkbox_unchecked.png</file>
+        <file>Resources/setting/bind.png</file>
+        <file>Resources/setting/comboBox_down_arrow.png</file>
+        <file>Resources/setting/radio_unchecked.png</file>
+        <file>Resources/setting/radio_checked.png</file>
     </qresource>
 </RCC>

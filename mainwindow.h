@@ -20,6 +20,7 @@
 #include "categoryselectbox.h"
 #include "pageswitcher.h"
 #include "accountwidget.h"
+#include "settingwidget.h"
 
 QT_BEGIN_NAMESPACE
 namespace Ui { class MainWindow; }
@@ -54,6 +55,7 @@ private:
     void initRank();
     void initSinger();
     void initNewestMusic();
+    void initSetttingWidget();
 private slots:
     void on_btn_close_clicked();
     void on_btn_maximum_clicked();
