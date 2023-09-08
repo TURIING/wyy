@@ -105,4 +105,36 @@
         <file>Resources/setting/radio_unchecked.png</file>
         <file>Resources/setting/radio_checked.png</file>
     </qresource>
+    <qresource prefix="/favorite">
+        <file>Resources/favorite/like.png</file>
+        <file>Resources/favorite/download.png</file>
+        <file>Resources/favorite/download_hover.png</file>
+        <file>Resources/favorite/like_hover.png</file>
+    </qresource>
+    <qresource prefix="/bottom">
+        <file>Resources/bottom/img.png</file>
+        <file>Resources/bottom/company.png</file>
+        <file>Resources/bottom/like.png</file>
+        <file>Resources/bottom/loop.png</file>
+        <file>Resources/bottom/loop_hover.png</file>
+        <file>Resources/bottom/lyric.png</file>
+        <file>Resources/bottom/lyric_hover.png</file>
+        <file>Resources/bottom/next.png</file>
+        <file>Resources/bottom/next_hover.png</file>
+        <file>Resources/bottom/pause.png</file>
+        <file>Resources/bottom/pause_hover.png</file>
+        <file>Resources/bottom/prev.png</file>
+        <file>Resources/bottom/prev_hover.png</file>
+        <file>Resources/bottom/song_list.png</file>
+        <file>Resources/bottom/song_list_hover.png</file>
+        <file>Resources/bottom/standard.png</file>
+        <file>Resources/bottom/start.png</file>
+        <file>Resources/bottom/start_hover.png</file>
+        <file>Resources/bottom/tone_quality.png</file>
+        <file>Resources/bottom/unlike.png</file>
+        <file>Resources/bottom/unlike_hover.png</file>
+        <file>Resources/bottom/volume.png</file>
+        <file>Resources/bottom/volume_hover.png</file>
+        <file>Resources/bottom/slide_handle_hover.png</file>
+    </qresource>
 </RCC>

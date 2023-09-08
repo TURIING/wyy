@@ -43,6 +43,8 @@ MainWindow::MainWindow(QWidget *parent): QMainWindow(parent), ui(new Ui::MainWin
     initNewestMusic();
 
     initSetttingWidget();
+
+    initFavoriteMusicWidget();
 }
 
 MainWindow::~MainWindow() {
@@ -61,7 +63,8 @@ void MainWindow::initListWidgetLeftMenu() {
 
     connect(ui->listWidget_LeftMenu, &QListWidget::currentRowChanged, [this](int _index){
         // 点击了 发现音乐
-        if(_index == 0) ui->stackedWidget->setCurrentIndex(0);
+        if(_index == 0)  ui->stackedWidget->setCurrentIndex(0);
+        ui->listWidget_MyMusic->setCurrentRow(-1);
     });
 
     ui->stackedWidget->setCurrentIndex(0);
@@ -80,6 +83,14 @@ void MainWindow::initListWidgetMyMusic() {
 
     auto item_recently = ui->listWidget_MyMusic->item(2);
     item_recently->setIcon(QIcon(":/icon/Resources/recently.png"));
+
+    connect(ui->listWidget_MyMusic, &QListWidget::currentRowChanged, [this](int _index) {
+        /* 我喜欢的音乐 被点击 */
+        if(_index == 0) {
+            ui->stackedWidget->setCurrentIndex(3);
+            ui->listWidget_LeftMenu->setCurrentRow(-1);
+        }
+    });
 }
 
 void MainWindow::mousePressEvent(QMouseEvent *_event) {
@@ -181,8 +192,8 @@ void MainWindow::initPersonalRecommand() {
 
     /* 设置滚动条样式 */
     auto scrollBar = ui->scrollArea_recommend->verticalScrollBar();
-    scrollBar->setStyleSheet("QScrollBar::vertical{ background: transparent; width: 10px; }"
-                             "QScrollBar::handle:vertical{ min-height: 10px; max-height: 20px; background: rgb(224, 224, 224); width: 10px; border-radius: 5px; }"
+    scrollBar->setStyleSheet("QScrollBar::vertical{ background: transparent; width: 12px; }"
+                             "QScrollBar::handle:vertical{ min-height: 10px; max-height: 20px; background: rgb(224, 224, 224); width: 12px; border-radius: 6px; }"
                              "QScrollBar::up-arrow:vertical{ border: none; }"
                              "QScrollBar::sub-line:vertical{ background: transparent; }"
                              "QScrollBar::add-line:vertical{ background: transparent; }");
@@ -515,6 +526,14 @@ void MainWindow::on_btn_setting_clicked() {
 void MainWindow::initSetttingWidget() {
     auto widget = new SettingWidget();
     ui->stackedWidget->insertWidget(1, widget);
+}
+
+/*
+ * 初始化喜欢的音乐页面
+ */
+void MainWindow::initFavoriteMusicWidget() {
+    auto widget = new FavoriteMusic();
+    ui->stackedWidget->insertWidget(3, widget);
 }
 
 

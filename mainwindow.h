@@ -21,6 +21,7 @@
 #include "pageswitcher.h"
 #include "accountwidget.h"
 #include "settingwidget.h"
+#include "favoritemusic.h"
 
 QT_BEGIN_NAMESPACE
 namespace Ui { class MainWindow; }
@@ -56,6 +57,7 @@ private:
     void initSinger();
     void initNewestMusic();
     void initSetttingWidget();
+    void initFavoriteMusicWidget();
 private slots:
     void on_btn_close_clicked();
     void on_btn_maximum_clicked();
