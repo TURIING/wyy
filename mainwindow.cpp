@@ -482,17 +482,7 @@ void MainWindow::initSinger() {
  * 初始化最新音乐页面
  */
 void MainWindow::initNewestMusic() {
-    auto widget = new QWidget(this);
-
-    auto pageSwitcher = new PageSwitcher(widget);
-    pageSwitcher->setFixedSize(50, 100);
-
-    auto vLayout = new QVBoxLayout(widget);
-    vLayout->addWidget(pageSwitcher, 0, Qt::AlignHCenter | Qt::AlignTop);
-
-    widget->setLayout(vLayout);
-
-    ui->scrollArea_newestMusic->setWidget(widget);
+    //ui->tabWidget_findMusic->addTab(new NewestMusic(), "最新音乐");
 }
 
 void MainWindow::on_btn_account_clicked() {

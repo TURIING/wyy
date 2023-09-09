@@ -137,4 +137,21 @@
         <file>Resources/bottom/volume_hover.png</file>
         <file>Resources/bottom/slide_handle_hover.png</file>
     </qresource>
+    <qresource prefix="/newMusic">
+        <file>Resources/newMusic/2.png</file>
+        <file>Resources/newMusic/1.png</file>
+        <file>Resources/newMusic/3.png</file>
+        <file>Resources/newMusic/4.png</file>
+        <file>Resources/newMusic/5.png</file>
+        <file>Resources/newMusic/6.png</file>
+        <file>Resources/newMusic/7.png</file>
+        <file>Resources/newMusic/8.png</file>
+        <file>Resources/newMusic/9.png</file>
+        <file>Resources/newMusic/10.png</file>
+        <file>Resources/newMusic/11.png</file>
+        <file>Resources/newMusic/12.png</file>
+        <file>Resources/newMusic/13.png</file>
+        <file>Resources/newMusic/14.png</file>
+        <file>Resources/newMusic/15.png</file>
+    </qresource>
 </RCC>

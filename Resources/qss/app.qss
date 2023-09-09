@@ -167,14 +167,14 @@ QTabBar::tab {
     min-width: 85px;
     min-height:30px;
     font-family:"微软雅黑";
-    font-size:22px;
+    font-size:25px;
 }
 
 QTabBar::tab:selected
 {
 	border-bottom: 3px solid rgb(236,65,65);
-	color: rgb(55,55,55);
-	font-size:27px;
+	color: rgb(51, 51, 51);
+	font-size:30px;
 	font-weight: bold;
 }
 

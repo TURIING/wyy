@@ -62,6 +62,7 @@ BottomWidget::BottomWidget(QWidget *parent) :QWidget(parent), ui(new Ui::BottomW
         ui->label_duration->setText(milliSecondToStr(_position));
         ui->horizontalSlider->setSliderPosition(static_cast<int>(_position));
     });
+
     connect(ui->horizontalSlider, &QSlider::sliderMoved, [this](int _value) {
         m_player->setPosition(static_cast<qint64>(_value));
     });

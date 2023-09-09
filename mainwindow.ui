@@ -555,7 +555,7 @@
                 <enum>QTabWidget::North</enum>
                </property>
                <property name="currentIndex">
-                <number>0</number>
+                <number>5</number>
                </property>
                <property name="tabsClosable">
                 <bool>false</bool>
@@ -677,33 +677,13 @@
                  </widget>
                 </widget>
                </widget>
-               <widget class="QWidget" name="tab_6">
+               <widget class="NewestMusic" name="tab_6">
+                <property name="whatsThis">
+                 <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;br/&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+                </property>
                 <attribute name="title">
                  <string>最新音乐</string>
                 </attribute>
-                <widget class="QScrollArea" name="scrollArea_newestMusic">
-                 <property name="geometry">
-                  <rect>
-                   <x>0</x>
-                   <y>0</y>
-                   <width>1521</width>
-                   <height>941</height>
-                  </rect>
-                 </property>
-                 <property name="widgetResizable">
-                  <bool>true</bool>
-                 </property>
-                 <widget class="QWidget" name="scrollAreaWidgetContents_4">
-                  <property name="geometry">
-                   <rect>
-                    <x>0</x>
-                    <y>0</y>
-                    <width>1519</width>
-                    <height>939</height>
-                   </rect>
-                  </property>
-                 </widget>
-                </widget>
                </widget>
               </widget>
              </item>
@@ -758,6 +738,12 @@
    <class>BottomWidget</class>
    <extends>QWidget</extends>
    <header>bottomwidget.h</header>
+   <container>1</container>
+  </customwidget>
+  <customwidget>
+   <class>NewestMusic</class>
+   <extends>QWidget</extends>
+   <header>newestmusic.h</header>
    <container>1</container>
   </customwidget>
  </customwidgets>
