@@ -67,6 +67,6 @@
 * 使用自定义`delegate`实现自定义表格内按钮
 * 使用`QSortFilterProxyModel`以及正则表达式实现表格内搜索、排序功能
 
-![image-20230915200605569](.\image\README\image-20230915200605569.png)
+![image-20230915200605569](./image/README/image-20230915200605569.png)
 
-![image-20230915201016551](.\image\README\image-20230915201016551.png)
+![image-20230915201016551](./image/README/image-20230915201016551.png)
