@@ -555,7 +555,7 @@
                 <enum>QTabWidget::North</enum>
                </property>
                <property name="currentIndex">
-                <number>5</number>
+                <number>3</number>
                </property>
                <property name="tabsClosable">
                 <bool>false</bool>
@@ -737,13 +737,13 @@
   <customwidget>
    <class>BottomWidget</class>
    <extends>QWidget</extends>
-   <header>bottomwidget.h</header>
+   <header>page/bottomwidget.h</header>
    <container>1</container>
   </customwidget>
   <customwidget>
    <class>NewestMusic</class>
    <extends>QWidget</extends>
-   <header>newestmusic.h</header>
+   <header>page/newestmusic.h</header>
    <container>1</container>
   </customwidget>
  </customwidgets>

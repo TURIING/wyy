@@ -18,7 +18,7 @@
 #include <QGraphicsDropShadowEffect>
 #include "podcastwidget.h"
 #include "categoryselectbox.h"
-#include "accountwidget.h"
+#include "page/accountwidget.h"
 #include "settingwidget.h"
 #include "favoritemusic.h"
 #include "newestmusic.h"

@@ -104,13 +104,13 @@
   <customwidget>
    <class>SlideShowButton</class>
    <extends>QWidget</extends>
-   <header>slideshowbutton.h</header>
+   <header>page/slideshowbutton.h</header>
    <container>1</container>
   </customwidget>
   <customwidget>
    <class>SlideShowView</class>
    <extends>QGraphicsView</extends>
-   <header>slideshowview.h</header>
+   <header>page/slideshowview.h</header>
   </customwidget>
  </customwidgets>
  <resources/>
