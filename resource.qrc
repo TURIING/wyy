@@ -110,6 +110,16 @@
         <file>Resources/favorite/download.png</file>
         <file>Resources/favorite/download_hover.png</file>
         <file>Resources/favorite/like_hover.png</file>
+        <file>Resources/favorite/image.png</file>
+        <file>Resources/favorite/play.png</file>
+        <file>Resources/favorite/add.png</file>
+        <file>Resources/favorite/collect.png</file>
+        <file>Resources/favorite/downloadAll.png</file>
+        <file>Resources/favorite/share.png</file>
+        <file>Resources/favorite/asc_sort.png</file>
+        <file>Resources/favorite/desc_sort.png</file>
+        <file>Resources/favorite/search.png</file>
+        <file>Resources/favorite/deleteAll.png</file>
     </qresource>
     <qresource prefix="/bottom">
         <file>Resources/bottom/img.png</file>

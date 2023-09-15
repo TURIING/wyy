@@ -89,7 +89,8 @@ public:
             }
 
             /* 绘制按钮 */
-            int half = (_option.rect.width() - m_btnSize.width() * m_btnCount - m_spacing * (m_btnCount - 1)) / 2;
+            //int half = (_option.rect.width() - m_btnSize.width() * m_btnCount - m_spacing * (m_btnCount - 1)) / 6;
+            int half = 0;
             int top = (_option.rect.height() - m_btnSize.height()) / 2;
 
             for(auto i = 0; i < m_btnCount; i++) {
@@ -115,13 +116,14 @@ public:
     }
 
 
-    virtual bool editorEvent(QEvent *_event, QAbstractItemModel *_model, const QStyleOptionViewItem &_option, const QModelIndex &_index) override {
+    bool editorEvent(QEvent *_event, QAbstractItemModel *_model, const QStyleOptionViewItem &_option, const QModelIndex &_index) override {
         if(_index.column() != 1) return false;
 
-        auto event = static_cast<QMouseEvent *>(_event);
+        auto event = dynamic_cast<QMouseEvent *>(_event);
         m_mousePoint = event->pos();
 
-        int half = (_option.rect.width() - m_btnSize.width() * m_btnCount - m_spacing * (m_btnCount - 1)) / 2;
+        //int half = (_option.rect.width() - m_btnSize.width() * m_btnCount - m_spacing * (m_btnCount - 1)) / 2;
+        int half = 0;
         int top = (_option.rect.height() - m_btnSize.height()) / 2;
 
         bool bRepaint = false;
@@ -148,7 +150,6 @@ public:
                     qDebug() << "like clicked";
                     break;
                 }
-
             }
         }
         return bRepaint;

@@ -5,6 +5,8 @@
 
 # 效果图
 
+由于图片较多，若未显示，需要挂梯子
+
 ## 个性推荐页面
 
 (官方)
@@ -35,6 +37,8 @@
 ![image-20230909210949714](image/README/image-20230909210949714.png)
 
 （模仿）
+
+* 使用事件过滤器（eventFilter）控制是否显示popup
 
 ![image-20230909210931385](image/README/image-20230909210931385.png)
 
@@ -69,6 +73,8 @@
 * 使用QSS重绘复选框、单选框、下拉列表框等控件
 
 ![image-20230909211443414](image/README/image-20230909211443414.png)
+
+![image-20230909212819931](image/README/image-20230909212819931.png)
 
 ![image-20230909211533005](image/README/image-20230909211533005.png)
 
@@ -108,3 +114,19 @@
 * 使用QSS重绘QProgressBar
 
 ![image-20230909212111900](image/README/image-20230909212111900.png)
+
+## 音乐列表
+
+（官方）
+
+![image-20230915200435913](.\image\README\image-20230915200435913.png)
+
+（模仿）
+
+* 使用`QTableView`实现音乐列表
+* 使用自定义`delegate`实现自定义表格内按钮
+* 使用`QSortFilterProxyModel`以及正则表达式实现表格内搜索、排序功能
+
+![image-20230915200605569](.\image\README\image-20230915200605569.png)
+
+![image-20230915201016551](.\image\README\image-20230915201016551.png)
